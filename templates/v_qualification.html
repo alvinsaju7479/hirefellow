@@ -1,0 +1,115 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Qualification</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">view qualification</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;"></h5>
+           
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-form bg-secondary rounded p-5">
+                    <div id="success"></div>
+                    <form action="addqual" method="post" enctype="multipart/form-data"  >
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="university" value="{{result.university}}" readonly required="required" data-validation-required-message="Please enter university" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                     
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="marks" value="{{result.marks}}" readonly required="required" data-validation-required-message="Please enter venue" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                        <div class="control-group">
+                            
+                            <p>Download Certificate: <a target="_blank" href="{{ result.file.url }}">{{ result.file.name }}</a></p>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="qual" value="{{result.qual}}" readonly required="required" data-validation-required-message="Please enter qual" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="university1" readonly value="{{result.university1}}"  />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                     
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="marks1" readonly value="{{result.marks1}}" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                        <div class="control-group">
+                            
+                            <p>Download Certificate: <a target="_blank" href="{{ result.file1.url }}">{{ result.file1.name }}</a></p>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="qual1" readonly value="{{result.qual1}}"  />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="university2" readonly value="{{result.university2}}"  />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                     
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="marks2" readonly value="{{result.marks2}}" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                        <div class="control-group">
+                            
+                            <p>Download Certificate: <a target="_blank" href="{{ result.file2.url }}">{{ result.file2.name }}</a></p>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" readonly name="qual2"  value="{{result.qual2}}"  />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                       
+                        
+                       
+                       
+                       
+                        <div class="text-center">
+                            <a class="btn btn-primary py-3 px-5" href="back" type="submit" id="sendMessageButton">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

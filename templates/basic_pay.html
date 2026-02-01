@@ -1,0 +1,71 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Basic Pay</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Basic Pay</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;"></h5>
+            <h1> Add Basic Payment </h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-form bg-secondary rounded p-5">
+                    <div id="success"></div>
+                    <form action="addbasicpay" method="post" enctype="multipart/form-data"  >
+                        {% csrf_token %}
+                     
+                       
+                        <div class="control-group">Designation
+                          
+                            <select type="text" class="form-control "  id="email" name="designation" placeholder="Designation" required="required">
+                                <option value="manager">Manager</option>
+                                <option value="seniorstaff">Senior Staff</option>
+                                <option value="juniorstaff">Junior Staff</option>
+                            </select>
+                
+                        </div><br>
+                        <div class="control-group">
+                            <textarea name="basicpay"  class="form-control border-0 p-4" placeholder="Basic Pay Per Day" id="" cols="30" rows="5"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                      
+                      
+                     
+                       
+                       
+                        <div class="text-center">
+                            <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

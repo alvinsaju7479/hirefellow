@@ -1,0 +1,67 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Candidate List</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Attendance</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Gender</th>
+            <th>Dob</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Qualificatio</th>
+            <th>Email</th>
+            <th>Nationality</th>
+            <th>Designation</th>
+            <th>Attendance</th>
+           
+           
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for i in result %}
+            <td class="name-pr">{{i.name}} {{i.lname}}</td>
+            <td class="name-pr">{{i.gender}}</td>
+            <td class="quantity-box">{{i.dob}}</td>
+            <td class="quantity-box">{{i.address}}</td>
+            <td class="quantity-box">{{i.mob}}</td>
+            <td class="quantity-box">{{i.qualification}}</td>
+            <td class="quantity-box">{{i.email}}</td>
+            <td class="quantity-box">{{i.nationality}}</td>
+            <td class="quantity-box">{{i.designation}}</td>
+            <td class="add-pr">
+                <a class="btn btn-primary" href="markattendance/{{i.id}}">Mark Attendance</a>
+            </td>
+          
+           
+
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+{% endblock %}

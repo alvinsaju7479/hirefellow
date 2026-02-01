@@ -1,0 +1,88 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Post Job Vacancy</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Add job vacancy</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Vacancy</h5>
+            <h1> Registration Form</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-form bg-secondary rounded p-5">
+                    <div id="success"></div>
+                    <form action="adddvacancy" method="post" >
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="title" placeholder="Title" required="required" data-validation-required-message="Please enter Title" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                     
+                        <div class="control-group">
+                            <input type="text" class="form-control border-0 p-4" id="name" name="venue" placeholder="Venue" required="required" data-validation-required-message="Please enter venue" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                        <div class="control-group">
+                            Date
+                            <input type="date" class="form-control border-0 p-4" id="date_picker" name="date" placeholder="Date" required="required" data-validation-required-message="Please enter date" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <script language="javascript">
+                            var today = new Date();
+                            var dd = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0');
+                            var yyyy = today.getFullYear();
+                    
+                            today = yyyy + '-' + mm + '-' + dd;
+                            $('#date_picker').attr('min',today);
+                        </script>
+                        <div class="control-group">
+                            Time
+                            <input type="time" class="form-control border-0 p-4" id="name" name="time" placeholder="Time" required="required" data-validation-required-message="Please enter time" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" name="description" placeholder="Description" required="required" data-validation-required-message="Please enter your Address"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                       
+                       
+                       
+                        <div class="text-center">
+                            <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

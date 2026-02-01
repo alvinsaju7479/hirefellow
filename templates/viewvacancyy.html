@@ -1,0 +1,63 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Vacancy List</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">View Vacancy</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Title</th>
+            <th> Venue</th>
+            <th> Date</th>
+            <th>Time</th>
+            <th>Description</th>
+           
+            <!-- <th>Approve</th> -->
+            <th>Reject</th>
+           
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for i in result %}
+            <td class="name-pr">{{i.title}}</td>
+            <td class="name-pr">{{i.venue}}</td>
+            <td class="quantity-box">{{i.date}}</td>
+            <td class="quantity-box">{{i.time}}</td>
+            <td class="quantity-box">{{i.description}}</td>
+           
+            <!-- <td class="add-pr">
+                <a class="btn btn-primary " href="uapprove/{{i.id}}">Approve</a>
+            </td> -->
+            <td class="remove-pr">
+                <a class="btn btn-primary" href="vdelete/{{i.id}}"><i ></i>Remove</a>
+            </td>
+           
+
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+{% endblock %}

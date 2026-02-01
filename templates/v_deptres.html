@@ -1,0 +1,71 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Dept: Transfer Details</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Transfer Details</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+
+            <th> From</th>
+            <th> To</th>
+            <th> Remark</th>
+            <th> Status</th>
+          
+          
+           
+            <!-- <th>Approve</th>
+            <th>Reject</th> -->
+           
+           
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for i in result %}
+         
+
+            <td class="name-pr">{{i.e_id}}</td>
+            <td class="name-pr">{{i.from_id}}</td>
+            <td class="name-pr">{{i.to_id}}</td>
+            <td class="name-pr">{{i.remark}}</td>
+            <td class="name-pr">{{i.status}}</td>
+           
+           
+            <!-- <td class="add-pr">
+                <a class="btn btn-primary " href="papprove/{{i.id}}">Approve</a>
+            </td>
+            <td class="add-pr">
+                <a class="btn btn-primary " href="preject/{{i.id}}">Reject</a>
+            </td>
+           
+            -->
+
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+{% endblock %}

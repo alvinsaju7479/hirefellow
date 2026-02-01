@@ -1,0 +1,63 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Job Applications</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Job Applications</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Candidate</th>
+            <th> Email</th>
+            <th> Job</th>
+            <th>Company Username</th>
+            <th>Resume</th>
+           
+            <th>Approve</th>
+            <!-- <th>Reject</th> -->
+           
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for i in result %}
+            <td class="name-pr">{{i.c_name}}</td>
+            <td class="name-pr">{{i.c_email}}</td>
+            <td class="quantity-box">{{i.j_id}}</td>
+            <td class="quantity-box">{{i.cuname}}</td>
+            <td class="quantity-box"><a target="_blank" href="{{ i.file.url }}">{{ i.file.name }}</a></td>
+           
+            <td class="add-pr">
+                <a class="btn btn-primary " href="japprove/{{i.id}}">Approve</a>
+            </td>
+            <!-- <td class="remove-pr">
+                <a class="btn btn-primary" href="udelete/{{i.id}}"><i ></i>Reject</a>
+            </td>
+            -->
+
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+{% endblock %}

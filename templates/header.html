@@ -1,0 +1,323 @@
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <style>
+      
+       
+        
+        .dropdown {
+          float: left;
+          overflow: auto;
+        }
+        
+        .dropdown .dropbtn {
+          font-size: 16px;  
+          border: none;
+          outline: none;
+          color: #f33f3f;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+        
+      
+        
+        .dropdown-content {
+          display: none;
+          position: fixed;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #c3c2c2;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        </style>
+    <meta charset="utf-8">
+    <title>HIRE FELLOWS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <style>
+      
+       
+        
+        .dropdown {
+          float: left;
+          overflow: visible;
+        }
+        
+        .dropdown .dropbtn {
+          font-size: 16px;  
+          border: none;
+          outline: none;
+          color: #f33f3f;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+        
+      
+        
+        .dropdown-content {
+          display: none;
+          position: fixed;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #c3c2c2;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid d-none d-lg-block">
+        <div class="row align-items-center py-4 px-xl-5">
+            <div class="col-lg-3">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0"><span class="text-primary">HIRE </span>FELLOWS</h1>
+                </a>
+            </div>
+           
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+               
+               
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        {% if request.session.admin %}
+                        <div class="navbar-nav py-0">
+                            <a href="http://127.0.0.1:8000/index" class="nav-item nav-link active">Home</a>
+                            <a href="http://127.0.0.1:8000/viewcandidate" class="nav-item nav-link">Candidates</a>
+                            <a href="http://127.0.0.1:8000/hrregistration" class="nav-item nav-link">Add Hr</a>
+                            <a href="http://127.0.0.1:8000/viewvacancy" class="nav-item nav-link">View Vacancy</a>
+                            <a href="http://127.0.0.1:8000/viewjobapply_a" class="nav-item nav-link">View Job Applications</a>
+                            <a href="http://127.0.0.1:8000/viewcomplaint" class="nav-item nav-link">View Complaints</a>
+                            <a href="http://127.0.0.1:8000/viewfeedbck" class="nav-item nav-link">View Feedbacks</a>
+                            <!-- <div class="dropdown">
+                              <button class="dropbtn">ADD 
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                              <div class="dropdown-content">
+                                <a href="http://127.0.0.1:8000/hrregistration" class="nav-item nav-link">Add Hr</a>
+                                <a href="http://127.0.0.1:8000/empregistration" class="nav-item nav-link">Add Employee</a>
+                                <a href="http://127.0.0.1:8000/deptregistration" class="nav-item nav-link">Add Department</a>
+                             
+                              </div>
+                          </div> 
+                           -->
+                            <!-- <a href="http://127.0.0.1:8000/basicpay" class="nav-item nav-link">Add Basic Pay</a>
+                            <a href="http://127.0.0.1:8000/viewemp" class="nav-item nav-link">Add Salary</a> -->
+                            <!-- <div class="dropdown">
+                                <button class="dropbtn">View 
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="http://127.0.0.1:8000/viewvacancy">View Vacancy</a>
+                                  <a href="http://127.0.0.1:8000/viewjobapply_a">View Job Applications</a>
+                                  <a href="http://127.0.0.1:8000/viewcomplaint">View Complaints</a>
+                                  <a href="http://127.0.0.1:8000/viewfeedbck">View Feedbacks</a>
+                                  <a href="http://127.0.0.1:8000/viewattendance">View Attendance</a>
+                                </div>
+                            </div>  -->
+                           
+                        </div>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="http://127.0.0.1:8000/logout">Logout Now</a>
+                    </div>
+
+                        {% elif request.session.hid %}
+                        <div class="navbar-nav py-0">
+                            <a href="http://127.0.0.1:8000/index" class="nav-item nav-link active">Home</a>
+                            <a href="http://127.0.0.1:8000/vacancy" class="nav-item nav-link">Add Job Vacancy</a>
+                            <a href="http://127.0.0.1:8000/viewvacancyy" class="nav-item nav-link">View Vacancy</a>
+                                <a href="http://127.0.0.1:8000/viewcan" class="nav-item nav-link">view Candidate</a>
+                                <a href="http://127.0.0.1:8000/viewjobapply" class="nav-item nav-link">View Job Applications</a>
+                                <a href="http://127.0.0.1:8000/viewinterview" class="nav-item nav-link">View Interviewed Candidates</a>
+                                <a href="http://127.0.0.1:8000/addskill" class="nav-item nav-link">Skill Check </a>
+                                <a href="http://127.0.0.1:8000/test" class="nav-item nav-link">Test  </a>
+
+                            
+                                <!-- <div class="nav-item dropdown">
+                              <button class="dropbtn">View 
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                              <div class="dropdown-content">
+                                <a href="viewvacancyy">View Vacancy</a>
+                                <a href="viewcan">view Candidate</a>
+                                <a href="viewjobapply">View Job Applications</a>
+                                <a href="viewinterview">View Interviewed Candidates</a>
+                               
+                              </div>
+                          </div>  -->
+                           <!-- <div class="nav-item dropdown">
+                              <button class="dropbtn">Requests 
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                              <div class="dropdown-content">
+                                <a href="viewpromo">Promotion Requests</a>
+                                <a href="viewtransferreq_dept">Transfer Requests</a>
+                                <a href="viewleave">Leave Requests</a>
+                               
+                              </div>
+                          </div>  -->
+
+                      
+                          <!-- <a href="attendance" class="nav-item nav-link">Attendance</a>
+                          <a href="assign_job" class="nav-item nav-link">Assign Job</a>
+                          <a href="viewsal" class="nav-item nav-link">View Salary</a> -->
+                          
+
+                        </div>
+                        
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="http://127.0.0.1:8000/logout">Logout Now</a>
+                    </div>
+                        {% elif request.session.eid %}
+                        <div class="navbar-nav py-0">
+                            <a href="http://127.0.0.1:8000/index" class="nav-item nav-link active">Home</a>
+                           
+                            <a href="http://127.0.0.1:8000/promotionn" class="nav-item nav-link">Apply Promotion</a>
+                            <a href="http://127.0.0.1:8000/leave" class="nav-item nav-link">Apply Leave</a>
+                           
+                            <a href="http://127.0.0.1:8000/cmplnt_emp" class="nav-item nav-link">Add Complaint</a>
+                            <div class="nav-item dropdown">
+                              <button class="dropbtn">View 
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                              <div class="dropdown-content">
+                                <a href="viewassigned">view Assigned Jobs</a>
+                                <a href="viewreply_emp">view Complaint Reply</a>
+                                <a href="viewpromores">view Promotion Status</a>
+                                <a href="viewdept_s">view Dept: Transfer Status</a>
+                                <a href="viewbranch_s">view Branch Transfer Status</a>
+                                <a href="viewbleavereq">view Leave Status</a>
+                              </div>
+                          </div> 
+                          <div class="nav-item dropdown">
+                            <button class="dropbtn">Transfer Request 
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                             
+                              <a href="dept_trnsfr">Department</a>
+                              <a href="branch_trnsfr">Branch</a>
+                            </div>
+                        </div> 
+                        </div>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="logout">Logout Now</a>
+                    </div>
+                        {% elif request.session.cid %}
+                        <div class="navbar-nav py-0">
+                            <a href="http://127.0.0.1:8000/index" class="nav-item nav-link active">Home</a>
+                           
+                            <a href="http://127.0.0.1:8000/qual" class="nav-item nav-link">Add Qualification</a>
+                          
+                           
+                          <a href="http://127.0.0.1:8000/viewplcmnt" class="nav-item nav-link">Placement</a>
+
+                            <a href="http://127.0.0.1:8000/cmplnt" class="nav-item nav-link">Add Complaint</a>
+                            <a href="http://127.0.0.1:8000/viewvacancyy_cand"  class="nav-item nav-link">View Job Vacancy</a>
+                               
+                            <a href="http://127.0.0.1:8000/viewinrvcall"  class="nav-item nav-link">View Interview Call</a>
+                            <a href="http://127.0.0.1:8000/viewreply"  class="nav-item nav-link">view Complaint Reply</a>
+                            <!-- <div class="nav-item dropdown">
+                              <button class="dropbtn">View 
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                              <div class="dropdown-content">
+                                <a href="viewvacancyy_cand">View Job Vacancy</a>
+                               
+                                <a href="viewinrvcall">View Interview Call</a>
+                                <a href="viewreply">view Complaint Reply</a>
+                              </div>
+                          </div>  -->
+                            <a href="http://127.0.0.1:8000/feedbck" class="nav-item nav-link">Add Feedback</a>
+                        </div>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="http://127.0.0.1:8000/logout">Logout Now</a>
+                    </div>
+                        {% else %}
+                        <div style="padding-left: 500px;" class="navbar-nav py-0">
+                            <a href="http://127.0.0.1:8000/index" class="nav-item nav-link active">Home</a>
+                            <a href="http://127.0.0.1:8000/cndregistration" class="nav-item nav-link">Register</a>
+                          
+                        <a  class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="http://127.0.0.1:8000/login">Login Now</a>
+                    </div>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    {% endblock %}

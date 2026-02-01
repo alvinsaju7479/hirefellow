@@ -1,0 +1,62 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+ <!-- Header Start -->
+ <div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase"> Feedbacks</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">feedback</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<br><br>
+<h3>Candidates Feedbacks</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Candidate Name</th>
+            <th> Feedback</th>
+            <th> Message</th>
+          
+           
+            <!-- <th>Approve</th> -->
+            <!-- <th>Reply</th> -->
+           
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for i in result %}
+            <td class="name-pr">{{i.c_id}}</td>
+            <td class="name-pr">{{i.feedback}}</td>
+            <td class="name-pr">{{i.message}}</td>
+           
+           
+            <!-- <td class="add-pr">
+                <a class="btn btn-primary " href="uapprove/{{i.id}}">Approve</a>
+            </td> -->
+            <!-- <td class="remove-pr">
+                <a class="btn btn-primary" href="reply/{{i.id}}"><i ></i>Reply</a>
+            </td> -->
+           
+
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% include 'footer.html' %}
+
+{% endblock %}
